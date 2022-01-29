@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoModeloDDD.Domain.Entities
 {
@@ -10,7 +6,7 @@ namespace ProjetoModeloDDD.Domain.Entities
     {
         public int ProdutoId { get; set; }
         public string Nome { get; set; }
-        public decimal  Valor { get; set; }
+        public decimal Valor { get; set; }
         public bool Disponivel { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataAtualizacao { get; set; }

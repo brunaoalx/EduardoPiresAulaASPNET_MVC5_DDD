@@ -3,11 +3,7 @@
 
 namespace ProjetoModeloDDD.MVC.App_Start
 {
-    using System;
-    using System.Web;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
     using ProjetoModeloDDD.Application;
@@ -16,21 +12,23 @@ namespace ProjetoModeloDDD.MVC.App_Start
     using ProjetoModeloDDD.Domain.Interfaces.Services;
     using ProjetoModeloDDD.Domain.Services;
     using ProjetoModeloDDD.Infra.Data.Repositories;
+    using System;
+    using System.Web;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -38,7 +36,7 @@ namespace ProjetoModeloDDD.MVC.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -78,6 +76,6 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IClienteRepository>().To<ClienteRepository>();
             kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
-        }        
+        }
     }
 }

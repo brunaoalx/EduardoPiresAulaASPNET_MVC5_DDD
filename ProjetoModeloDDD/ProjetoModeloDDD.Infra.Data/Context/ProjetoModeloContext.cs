@@ -10,8 +10,11 @@ namespace ProjetoModeloDDD.Infra.Data.Context
     {
 
         public ProjetoModeloContext()
-            :base("ProjetoModeloDDD")
+            : base("ProjetoModeloDDD")
         {
+            // the terrible hack
+            var ensureDLLIsCopied =
+                    System.Data.Entity.SqlServer.SqlProviderServices.Instance;
 
         }
 
@@ -55,7 +58,7 @@ namespace ProjetoModeloDDD.Infra.Data.Context
             foreach (var entry in ChangeTracker.Entries())
             {
 
-                if (entry.Entity.GetType().GetProperty("DataCadastro") != null )
+                if (entry.Entity.GetType().GetProperty("DataCadastro") != null)
                 {
                     if (entry.State == EntityState.Added)
                         entry.Property("DataCadastro").CurrentValue = DateTime.Now;
