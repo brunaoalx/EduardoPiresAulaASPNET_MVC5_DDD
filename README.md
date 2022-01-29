@@ -1,0 +1,2 @@
+# EduardoPiresAulaASPNET_MVC5_DDD
+http://eduardopires.net.br/2014/10/tu...  Arquitetura de Sistemas Corporativos é um tema muito menos explorado do que ASP.NET MVC 5 e nem por isso é menos importante (na verdade é bem mais), neste vídeo tutorial eu mostrarei como criar uma arquitetura padrão DDD utilizando ASP.NET MVC 5.2, Entity Framework, AutoMapper, IoC com Ninject e muitas dicas para criar uma arquitetura modelo e totalmente responsável.
